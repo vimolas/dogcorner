@@ -5,6 +5,10 @@ class AppointmentsController < ApplicationController
     @appointments = policy_scope(Appointment)
   end
 
+  def show
+    @appointments = Appointment.find(params[:id])
+  end
+
   def new
     @appointment = current_user.appointments.new
     authorize @appointment
@@ -12,9 +16,10 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = current_user.appointments.new(appointments_params)
+    @appointment.dog = Dog.find(params[:dog_id])
     authorize @appointment
     if @appointment.save
-      redirect_to profiles_show
+      redirect_to dashboard, notice: "Appointment created!" # You need to redirect somewhere, probably appointments#show
     else
       render :new
     end
@@ -36,7 +41,7 @@ class AppointmentsController < ApplicationController
     authorize @appointment
   end
 
-  def dogs_params
-    params.require(:dog).permit(:name, :photo, :age, :pedigree, :description, :location, :user_id, :breed_id)
+  def appointments_params
+    params.require(:appointment).permit(:message, :date, :user_id)
   end
 end

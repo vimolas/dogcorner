@@ -1,15 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-3">
-      <h4>Pupname: </h4> <p><%= @dog.name %></p>
-      <h4>Puppcription: </h4> <p><%= @dog.description %></p>
-      <h4>Puppage: </h4> <p><%= @dog.age %></p>
-      <h4>Pupphoto: </h4> <p><%= @dog.photo %></p>
+    <div class="col-sm-3 left-row">
+      <h4>Name: </h4><p><%= @dog.name %></p>
+      <h4>Description: </h4><p><%= @dog.description %></p>
+      <h4>Age: </h4><p><%= @dog.age %></p>
+      <h4>Pedigree: </h4><p><%= @dog.pedigree %></p>
+      <h4>Breed: </h4><p><%= @dog.breed.name %></p>
+      <h4>Location: </h4><p><%= @dog.location %></p>
+      <div>
+        <h4>Pup-photo: </h4> <%= image_tag(@dog.photo, :class => "photo-container") %>
+      </div>
     </div>
     <div class="col-sm-6">
     <div id="map"></div>
     <script>
       var map;
+
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 45.46, lng: 9.18},
@@ -21,7 +27,13 @@
     async defer></script>
     </div>
     <div class="col-sm-3">
-
+        <% if current_user != @dog.user %>
+          <%= simple_form_for([@dog, @appointment]) do |f| %>
+            <%= f.input :date, as: :date, html5: true %>
+            <%= f.input :message %>
+            <%= f.button :submit, :label_html => { class: 'btn-dark' } %>
+          <% end %>
+        <% end %>
     </div>
   </div>
 </div>
