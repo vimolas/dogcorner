@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+.banner {
+    text-align: center;
+    height: 75vh;
+    background-size: cover !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.btn {
+  background-color: #1d2d44;
+}
+
+.text {
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.banana {
+  background-color: red;
+}
+
+.arbi {
+  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
+}
