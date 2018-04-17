@@ -1,1 +1,27 @@
-<%= @dog.name %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h4>Pupname: </h4> <p><%= @dog.name %></p>
+      <h4>Puppcription: </h4> <p><%= @dog.description %></p>
+      <h4>Puppage: </h4> <p><%= @dog.age %></p>
+      <h4>Pupphoto: </h4> <p><%= @dog.photo %></p>
+    </div>
+    <div class="col-sm-6">
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 45.46, lng: 9.18},
+          zoom: 12
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7q1vWloHEGAUM2bKrQss3DV6vp6OTm1o&callback=initMap"
+    async defer></script>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+  </div>
+</div>
