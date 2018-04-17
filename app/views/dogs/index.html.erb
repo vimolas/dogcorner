@@ -1,3 +1,19 @@
-<% @dogs.each do |dog| %>
-<%= dog.name %>
-<% end %>
+<p class="flash-notice"><%= flash[:notice] %></p>
+<div class="row">
+  <% @dogs.each do |dog| %>
+    <div class="col-xs-12 col-sm-4">
+
+      <!-- insert <div class="card"> -->
+      <div class="card">
+        <div class="card-description">
+          <h2><%= link_to dog.name, dog_path(dog)%></h2>
+          <p><%= "Has pedigree!" if dog.pedigree %></p>
+          <p><%= dog.description %></p>
+        </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+
+      </div>
+        <!-- insert <div class="card"> -->
+    </div>
+  <% end %>
+</div>
