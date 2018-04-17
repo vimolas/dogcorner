@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Breed.create(name: "labrador")
+Breed.create(name: "husky")
+Breed.create(name: "rotweiler")
+Breed.create(name: "beagle")
+Breed.create(name: "bull dog")
+
+User.create(first_name: "Bob", last_name: "Smith", email: "bob@smith.com", password: "123456")
+User.create(first_name: "Anne", last_name: "Mayer", email: "anne@mayer.com", password: "123456")
+User.create(first_name: "Michael", last_name: "Giuliani", email: "miachel@giuliani.com", password: "123456")
+
+Dog.create(name: "Rusty", breed_id: 4, user_id: 1, photo:"https://images.unsplash.com/photo-1515168123531-033bba977a9b?ixlib=rb-0.3.5&s=5bb97868e7b523b50cba7e8678174e80&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb", description: "Loving beagle, perfect for families", age: 2, pedigree: false, location: "Milano")
+Dog.create(name: "Bobby", breed_id: 2, user_id: 2, description: "Loving beagle, perfect for families", age: 4, pedigree: false, location: "Bologna")
+Dog.create(name: "Tommy", breed_id: 2, user_id: 3, description: "Loving beagle, perfect for families", age: 1, pedigree: true, location: "Vailate")
+Dog.create(name: "Robby", breed_id: 1, user_id: 3, description: "Loving beagle, perfect for families", age: 6, pedigree: false, location: "Palermo")
+Dog.create(name: "Rusty", breed_id: 5, user_id: 3, description: "Loving beagle, perfect for families", age: 9, pedigree: false, location: "Milano")
+Dog.create(name: "Fitch", breed_id: 3, user_id: 1, description: "Loving beagle, perfect for families", age: 8, pedigree: true, location: "Milano")
+Dog.create(name: "Mitch", breed_id: 3, user_id: 2, description: "Loving beagle, perfect for families", age: 0, pedigree: false, location: "Milano")
+Dog.create(name: "Toffee", breed_id: 1, user_id: 2, description: "Loving beagle, perfect for families", age: 14, pedigree: false, location: "Milano")
+Dog.create(name: "Thelma", breed_id: 2, user_id: 2, description: "Loving beagle, perfect for families", age: 4, pedigree: false, location: "Milano")
