@@ -4,6 +4,5 @@ class DashboardsController < ApplicationController
     @dogs = current_user.dogs
     @appointments = current_user.appointments
     authorize @dogs
-    authorize @appointments
   end
 end

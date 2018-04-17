@@ -14,7 +14,7 @@ class AppointmentsController < ApplicationController
     @appointment = current_user.appointments.new(appointments_params)
     authorize @appointment
     if @appointment.save
-      redirect_to profiles_show
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -27,6 +27,8 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
+    @appointment.destroy
+    redirect_to dashboard_path
   end
 
   private
@@ -36,7 +38,26 @@ class AppointmentsController < ApplicationController
     authorize @appointment
   end
 
-  def dogs_params
-    params.require(:dog).permit(:name, :photo, :age, :pedigree, :description, :location, :user_id, :breed_id)
+  def appointment_params
+    params.require(:appointment).permit(:date, :message, :status, :user_id, :dog_id)
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
