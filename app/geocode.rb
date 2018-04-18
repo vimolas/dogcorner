@@ -5,7 +5,7 @@ require 'pry'
 class Geocode
   def location
     location = "Milano"
-    api = "AIzaSyB7q1vWloHEGAUM2bKrQss3DV6vp6OTm1o"
+    api = ""
 
     location = URI("https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + api)
     location_res = Net::HTTP.get_response(location)
