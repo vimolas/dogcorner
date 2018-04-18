@@ -1,0 +1,19 @@
+// <div class="dashboard-intro-box">
+//   <h3>Welcome to your dashboard <%= @user.first_name %></h3>
+//   <p>From this page you can view the dogs you added and manage your appointments</p>
+// </div>
+
+.dashboard-intro-box {
+  padding: 40px 0px;
+  text-align: center;
+  background-color: #1d2d44;
+  color: white;
+  h3 {
+    font-size: 38px;
+  }
+  p {
+    font-size: 22px;
+  }
+}
+
+
