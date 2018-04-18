@@ -42,3 +42,18 @@
   font-weight: lighter;
   text-align: left;
 }
+
+.container-index-search-bar {
+  background-color: $gray;
+  padding: 20px;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > * {
+    padding: 10px;
+  }
+}
