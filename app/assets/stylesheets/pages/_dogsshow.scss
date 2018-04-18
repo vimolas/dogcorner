@@ -24,3 +24,36 @@ p {
 #appointment_date {
   color: $black
 }
+
+.map_show {
+  width: 600px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 4px;
+  box-shadow: 0px 6px 10px #46494c;
+}
+
+.dogshow_photo {
+  width: 700px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 4px;
+  box-shadow: 0px 6px 10px #46494c;
+}
+
+.calendar_show {
+  margin-top: 50px;
+  margin-right: 165px;
+}
+
+h4 {
+  color: $black;
+}
+
+p {
+  color: $black;
+}
+
+hr {
+  border-color: $black;
+}

@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = current_user.appointments.new(appointments_params)
+    @appointment = current_user.appointments.new(appointment_params)
     @appointment.dog = Dog.find(params[:dog_id])
     authorize @appointment
     if @appointment.save
