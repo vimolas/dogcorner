@@ -3,6 +3,11 @@ class DogsController < ApplicationController
 
   def index
     @dogs = policy_scope(Dog)
+    if params.has_key?(:q)
+      @dogs = Dog.where('location LIKE ?', "%#{params[:q]}%")
+    else
+      @dogs = Dog.all
+    end
   end
 
   def show
