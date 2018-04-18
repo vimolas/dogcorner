@@ -1,7 +1,7 @@
 <h1>Dogs#form</h1>
 <p>Find me in app/views/dogs/_form.html.erb</p>
 
-<%= simple_form_for(@dog) do |f| %>
+<%= simple_form_for @dog, :html => {class: "form-input"}  do |f| %>
 <%= f.input :name %>
 <%= f.input :description %>
 <%= f.input :photo %>
