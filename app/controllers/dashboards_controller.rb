@@ -6,3 +6,6 @@ class DashboardsController < ApplicationController
     authorize @dogs
   end
 end
+
+
+

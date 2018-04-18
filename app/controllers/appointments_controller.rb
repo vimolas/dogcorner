@@ -24,6 +24,8 @@ class AppointmentsController < ApplicationController
   end
 
   def update
+    @appointment.update(appointment_status_params)
+    redirect_to dashboard_path
   end
 
   def destroy
@@ -41,6 +43,11 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:date, :message, :status, :user_id, :dog_id)
   end
+
+  def appointment_status_params
+    params.permit(:status)
+  end
+
 end
 
 

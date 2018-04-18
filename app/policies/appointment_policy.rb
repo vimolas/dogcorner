@@ -6,7 +6,7 @@ class AppointmentPolicy < ApplicationPolicy
   end
 
   def show?
-    false
+    user == record.user  || user == record.dog.user
   end
 
   def create?
@@ -19,6 +19,14 @@ class AppointmentPolicy < ApplicationPolicy
 
   def update?
     user == record.user  || user == record.dog.user
+  end
+
+  def confirm?
+    user == record.dog.user
+  end
+
+  def decline?
+    user == record.dog.user
   end
 
   def destroy?

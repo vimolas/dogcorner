@@ -195,7 +195,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap
-  bootstrap-sass (~> 3.3.7)
+  bootstrap-sass
   devise
   figaro
   font-awesome-sass (~> 4.7)

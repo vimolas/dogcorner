@@ -4,9 +4,6 @@
 </div>
 
 
-<!-- aggiungi un link to all'immagine del cane -->
-
-
 <div class="dashboard-dog-container">
   <h5><%= "Your dogs" %></h5>
   <% @dogs.each do |dog| %>
@@ -16,18 +13,40 @@
   <% end %>
 </div>
 
+<!-- Show the appointments that the user requested: -->
 
-<div class="dashboard-appointment-container container">
+<div class="dashboard-appointment-container">
   <h5><%= "Your appointments" %></h5>
   <% @appointments.each do |appointment| %>
   <div class="card">
-    <h5 class="card-header"> Appointment date: <%= appointment.date %></h5>
+    <h5 class="card-header"> Date: <%= appointment.date %></h5>
     <div class="card-body">
       <h5 class="card-title">Appointment with <%= appointment.dog.name %></h5>
       <p class="card-text"><em><p><%= appointment.message %></em></p>
-      <p class="card-text"><p>Status: <%= appointment.status %></p>
-      <p><%= link_to "Cancel appointment", appointment_path(appointment), method: :delete, data: { confirm: "Are you sure to delete this appointment?" }%></p>
+      <p class="card-text">Status: <%= appointment.status %></p>
+      <p><%= link_to "Cancel appointment", appointment_path(appointment), method: :delete, data: { confirm: "Are you sure to delete this appointment?" }, class: "btn btn-danger" %></p>
     </div>
   </div>
   <% end %>
+
+  <!-- Show the appointments that the user was invited to: -->
+
+  <% @dogs.each do |dog| %>
+    <% dog.appointments.each do |appointment| %>
+      <div class="card">
+        <h5 class="card-header"> Date: <%= appointment.date %></h5>
+        <div class="card-body">
+          <h5 class="card-title">Appointment with <%= appointment.user.first_name %></h5>
+          <p class="card-text"><em><p><%= appointment.message %></em></p>
+          <p class="card-text">Status: <%= appointment.status %></p>
+          <p><%= link_to "Confirm appointment", appointment_path(appointment, :status => "confirmed"), :method => :put, class: "btn btn-success" %></p>
+          <p><%= link_to "Decline appointment", appointment_path(appointment, :status => "declined"), :method => :put, class: "btn btn-primary" %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+
 </div>
+
+

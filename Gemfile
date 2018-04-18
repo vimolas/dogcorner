@@ -13,7 +13,7 @@ gem 'devise'
 gem 'pundit'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass'
 gem 'bootstrap'
 gem 'font-awesome-sass', '~> 4.7'
 gem 'sass-rails'
