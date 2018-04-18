@@ -11,7 +11,8 @@ class DogsController < ApplicationController
   end
 
   def show
-
+    @appointment = Appointment.new
+    # @lng = @Geocode.location
   end
 
   def new

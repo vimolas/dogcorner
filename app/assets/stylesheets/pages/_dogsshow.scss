@@ -1,0 +1,26 @@
+h4 {
+  color: $black;
+}
+
+p {
+  color: $black;
+}
+
+.left-row {
+  position: relative;
+}
+
+.photo-container {
+  position: absolute;
+  width: 80%;
+  border-radius: 2px;
+  box-shadow: 0px 4px 18px rgba(117,117,117,1);
+}
+
+#appointment_message {
+  color: $black;
+}
+
+#appointment_date {
+  color: $black
+}
