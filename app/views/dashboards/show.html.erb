@@ -1,8 +1,52 @@
-<%= @user.first_name %>
-<% @dogs.each do |dog| %>
-<%=  dog.name %>
-<% end %>
+<div class="dashboard-intro-box">
+  <h3>Welcome to your dashboard <%= @user.first_name %></h3>
+  <p>Review the dogs you added and manage your appointments</p>
+</div>
 
-<%= @appointments.each do |appointment| %>
-<%= appointment.message %>
-<% end %>
+
+<div class="dashboard-dog-container">
+  <h5><%= "Your dogs" %></h5>
+  <% @dogs.each do |dog| %>
+  <%= link_to(dog_path(dog)) do %>
+  <div class="dashboard-dog-item" style="background-image: url(https://i2.wp.com/go.tiffinohio.net/wp-content/uploads/2018/02/PB1201_STORY_CARO-Authority-HealthyOutside-DOG-20160818.jpeg?fit=840%2C530&ssl=1)"> <h4><%= dog.name %></h4> </div>
+  <% end %>
+  <% end %>
+</div>
+
+<!-- Show the appointments that the user requested: -->
+
+<div class="dashboard-appointment-container">
+  <h5><%= "Your appointments" %></h5>
+  <% @appointments.each do |appointment| %>
+  <div class="card">
+    <h5 class="card-header"> Date: <%= appointment.date %></h5>
+    <div class="card-body">
+      <h5 class="card-title">Appointment with <%= appointment.dog.name %></h5>
+      <p class="card-text"><em><p><%= appointment.message %></em></p>
+      <p class="card-text">Status: <%= appointment.status %></p>
+      <p><%= link_to "Cancel appointment", appointment_path(appointment), method: :delete, data: { confirm: "Are you sure to delete this appointment?" }, class: "btn btn-danger" %></p>
+    </div>
+  </div>
+  <% end %>
+
+  <!-- Show the appointments that the user was invited to: -->
+
+  <% @dogs.each do |dog| %>
+    <% dog.appointments.each do |appointment| %>
+      <div class="card">
+        <h5 class="card-header"> Date: <%= appointment.date %></h5>
+        <div class="card-body">
+          <h5 class="card-title">Appointment with <%= appointment.user.first_name %></h5>
+          <p class="card-text"><em><p><%= appointment.message %></em></p>
+          <p class="card-text">Status: <%= appointment.status %></p>
+          <p><%= link_to "Confirm appointment", appointment_path(appointment, :status => "confirmed"), :method => :put, class: "btn btn-success" %></p>
+          <p><%= link_to "Decline appointment", appointment_path(appointment, :status => "declined"), :method => :put, class: "btn btn-primary" %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+
+</div>
+
+

@@ -1,0 +1,21 @@
+.dashboard-dog-item {
+  height: 300px;
+  width: 300px;
+  background-size: cover !important;
+  background-position: center;
+  border: none;
+  box-shadow: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 2px;
+  margin-bottom: 50px;
+  box-shadow: 6px 6px 8px $gray;
+}
+
+.dashboard-dog-item h4 {
+  font-size: 45px;
+  color: white;
+  text-decoration: none;
+}
