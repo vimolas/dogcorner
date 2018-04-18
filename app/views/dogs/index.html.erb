@@ -1,5 +1,19 @@
-<p class="flash-notice"><%= flash[:notice] %></p>
 <div class="flex-container">
+<p class="flash-notice"><%= flash[:notice] %></p>
+  <div class="container-index-search-bar">
+    <div>
+      <form action="#" class="form-inline">
+        <input type="text" id="form-input" class="form-control input-lg" placeholder="Where?">
+        <input type="submit" class="btn btn-primary btn-lg" value="Search">
+      </form>
+    </div>
+    <div class="btn-group" id="buttons">
+      <button type="button" class="btn btn-primary">Genra</button>
+      <button type="button" class="btn btn-primary">Breed</button>
+      <button type="button" class="btn btn-primary">Pedigree</button>
+    </div>
+  </div>
+</div>
   <div class="row">
     <% @dogs.each do |dog| %>
     <div class="col-xs-12 col-sm-4">
