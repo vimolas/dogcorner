@@ -7,6 +7,7 @@
       <h4>Pedigree: </h4><p><%= @dog.pedigree %></p>
       <h4>Breed: </h4><p><%= @dog.breed.name %></p>
       <h4>Location: </h4><p><%= @dog.location %></p>
+      <%= @dog.photo %>
       <div>
         <h4>Pup-photo: </h4> <%= image_tag(@dog.photo, :class => "photo-container") %>
       </div>
