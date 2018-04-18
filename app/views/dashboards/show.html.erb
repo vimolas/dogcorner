@@ -12,7 +12,12 @@
     <% @dogs.each do |dog| %>
     <div class="col-xs-6">
       <%= link_to(dog_path(dog)) do %>
-      <div class="dashboard-dog-item" style="background-image: url(https://i2.wp.com/go.tiffinohio.net/wp-content/uploads/2018/02/PB1201_STORY_CARO-Authority-HealthyOutside-DOG-20160818.jpeg?fit=840%2C530&ssl=1)"> <h4><%= dog.name %></h4>
+      <% if dog.photo == nil %>
+      <%= image_tag "map.png", class: "index_dog_photo" %>
+      <% else %>
+      <div class="dashboard-dog-item" style="background-image: url(<%= dog.photo %>)"> <h4><%= dog.name %>
+      </h4>
+      <% end %>
       </div>
       <% end %>
     </div>
@@ -20,17 +25,6 @@
   </div>
 
 </div>
-
-
-
-
-<!-- Show the appointments that the user requested: -->
-
-
-
-<!-- Show the appointments that the user was invited to: -->
-
-
 
 
 

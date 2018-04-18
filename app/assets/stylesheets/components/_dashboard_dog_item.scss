@@ -1,6 +1,6 @@
 .dashboard-dog-item {
   height: 300px;
-  width: 300px;
+  width: 100%;
   background-size: cover !important;
   background-position: center;
   border: none;
@@ -11,7 +11,7 @@
   text-align: center;
   border-radius: 2px;
   box-shadow: 6px 6px 8px $gray;
-  margin: 0px 0px 80px 0px;
+  margin: 0px 50px 80px 50px;
 }
 
 .dashboard-dog-item h4 {
