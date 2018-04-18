@@ -2,9 +2,10 @@ class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
 
   def index
+    @text_input_from_user = params["search-word"]
     @dogs = policy_scope(Dog)
-    if params.has_key?(:q)
-      @dogs = Dog.where('location LIKE ?', "%#{params[:q]}%")
+    if params.has_key?("search-word")
+      @dogs = Dog.where('location LIKE ?', "%#{@text_input_from_user.capitalize}%")
     else
       @dogs = Dog.all
     end
