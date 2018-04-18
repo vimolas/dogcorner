@@ -1,7 +1,13 @@
 .dashboard-appointment-container {
   padding: 50px 200px;
-  background-color: #e5e5e5;
+  background-color: $light-gray;
   margin: 0px;
+
+  h2 {
+    color: $blue;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
   h5 {
     font-size: 23px;
   }
@@ -11,5 +17,30 @@
   a {
     font-size: 18px;
   }
+  .panel-heading {
+    background-color: $blue;
+    color: white;
+  }
+
+  .btn-danger {
+    background-color: red;
+  }
+
+  .btn-success {
+    background-color: #74B566;
+  }
+
+  .btn-primary {
+    background-color: red;
+  }
+
+  .btn {
+    border: none;
+  }
 }
+
+
+
+
+
 
