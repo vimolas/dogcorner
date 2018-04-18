@@ -8,8 +8,12 @@
         <div class="card">
           <div class="card-description">
             <h2><%= link_to dog.name, dog_path(dog)%></h2>
+            <% if dog.photo == nil %>
+              <%= image_tag "map.png" , class: "index_dog_photo" %>
+            <% else %>
+              <%= image_tag(dog.photo, class: "index_dog_photo") %>
+            <% end %>
             <p><%= "Has pedigree!" if dog.pedigree %></p>
-            <p><%= dog.description %></p>
           </div>
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
 
