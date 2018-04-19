@@ -9,11 +9,20 @@ class DogsController < ApplicationController
     else
       @dogs = Dog.all
     end
+
+    @dogs = Dog.where.not(latitude: nil, longitude: nil)
+    @markers = @dogs.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+      }
+    end
   end
 
   def show
     @appointment = Appointment.new
-    # @lng = @Geocode.location
+    @marker = []
+    @marker = [{lat: @dog.latitude, lng: @dog.longitude }] if @dog.latitude && @dog.longitude
   end
 
   def new
