@@ -8,9 +8,13 @@
       <h4>Age: </h4><p><%= @dog.age %></p>
       <h4>Pedigree: </h4><p><%= @dog.pedigree %></p>
       <h4>Breed: </h4><p><%= @dog.breed.name %></p>
-      <h4>Location: </h4><p><%= @dog.location %></p>
+      <h4>Address: </h4><p><%= @dog.address %></p>
       <hr>
-      <%= image_tag "map.png", class: "map_show" %>
+      <div>
+        <p>Banana</p>
+        <%= javascript_include_tag "application" %>
+        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+      </div>
     </div>
     <div class="col-sm-4">
       <div class="affix calendar_show">

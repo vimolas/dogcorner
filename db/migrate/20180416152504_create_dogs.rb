@@ -6,7 +6,7 @@ class CreateDogs < ActiveRecord::Migration[5.1]
       t.integer :age
       t.boolean :pedigree
       t.text :description
-      t.string :location
+      t.string :address
       t.references :user, foreign_key: true
       t.references :breed, foreign_key: true
 

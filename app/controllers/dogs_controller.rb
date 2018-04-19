@@ -12,7 +12,14 @@ class DogsController < ApplicationController
 
   def show
     @appointment = Appointment.new
-    # @lng = @Geocode.location
+    @dogs = Dog.where.not(latitude: nil, longitude: nil)
+
+    @markers = @dogs.map do |flat|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+      }
+    end
   end
 
   def new
