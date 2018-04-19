@@ -1,25 +1,54 @@
 .dashboard-appointment-container {
-  padding: 50px 200px;
+  padding: 30px 160px;
   background-color: $light-gray;
   margin: 0px;
 
   h2 {
-    color: $blue;
+    color: $red;
     font-size: 40px;
     margin-bottom: 40px;
   }
+
   h5 {
     font-size: 23px;
   }
+
   p {
     font-size: 18px;
   }
+
   a {
     font-size: 18px;
   }
+
   .panel-heading {
     background-color: $blue;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+    color: white;
+    margin: 0px;
+    }
+  }
+
+  .app-message {
+    color: #8F8D8E;
+  }
+
+  .appointment-item {
+    border: none;
+    margin: 20px 0px;
+    box-shadow: 6px 6px 8px $gray;
+  }
+
+  .app-button {
+    opacity: 0.8;
+  }
+
+  .app-button:hover {
+    opacity: 1;
   }
 
   .btn-danger {
@@ -37,6 +66,28 @@
   .btn {
     border: none;
   }
+
+  .app-icon {
+    color: $red;
+  }
+
+  .link-to-dog-show {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .nav-tabs a {
+    color: gray;
+  }
+
+  .nav-tabs .active a {
+    color: $blue;
+  }
+
+  .nav-tabs .active a:hover {
+    color: $blue;
+  }
+
 }
 
 
