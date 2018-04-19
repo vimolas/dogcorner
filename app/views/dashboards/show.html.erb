@@ -1,82 +1,92 @@
 <div class="dashboard-intro-box">
   <h3>Welcome to your dashboard <%= @user.first_name %></h3>
-  <p>Review the dogs you added and manage your appointments</p>
 </div>
-
-
-
-<div class="dashboard-dog-container">
-  <h5><%= "Your dogs" %></h5>
-
-  <div class="row">
-    <% @dogs.each do |dog| %>
-    <div class="col-xs-6">
-      <%= link_to(dog_path(dog)) do %>
-      <% if dog.photo == nil %>
-      <%= image_tag "dog.jpeg", class: "dashboard-dog-item" %>
-      <% else %>
-      <div class="dashboard-dog-item" style="background-image: url(<%= dog.photo %>)"> <h4><%= dog.name %>
-      </h4>
-      <% end %>
-      </div>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-
-</div>
-
 
 
 
 <div class="dashboard-appointment-container">
-  <h2>Your appointments</h2>
+  <h2><i class="far fa-calendar-check app-icon"></i> your appointments</h2>
 
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#appointments-requested">Appointments you requested</a></li>
-    <li><a data-toggle="tab" href="#appointments-invited">Appointments you've been invited to</a></li>
-  </ul>
+    <li class="active">
+      <a data-toggle="tab" href="#appointments-requested" class="menu-item">Appointments you requested</a></li>
+      <li>
+        <a data-toggle="tab" href="#appointments-invited" class="menu-item">Appointments you've been invited to</a>
+      </li>
+    </ul>
 
-  <div class="tab-content">
+    <div class="tab-content">
 
-    <div id="appointments-requested" class="tab-pane fade in active">
-      <div class="panel-group">
-        <% @appointments.each do |appointment| %>
-        <div class="panel panel-success">
-          <div class="panel-heading">Date: <%= appointment.date.strftime("%B %d, %Y")%> | <%= appointment.status.capitalize %>
+      <div id="appointments-requested" class="tab-pane fade in active">
+        <div class="panel-group">
+          <% @appointments.each do |appointment| %>
+          <div class="panel panel-success appointment-item">
+            <div class="panel-heading">
+              <p>Appointment date: <%= appointment.date.strftime("%B %d, %Y")%></p>
+              <p>Status: <%= appointment.status.capitalize %> </p>
+            </div>
+            <div class="panel-body">
+              <p>You requested to check out <%= link_to appointment.dog.name, dog_path(appointment.dog), class: "link-to-dog-show" %></p>
+              <em><p class="app-message"><%= appointment.message %></em></p>
+              <p><%= link_to "Cancel appointment", appointment_path(appointment), method: :delete, data: { confirm: "Are you sure to delete this appointment?" }, class: "btn btn-danger app-button" %></p>
+            </div>
           </div>
-          <div class="panel-body">
-            <p>Appointment with <%= appointment.dog.name %></p>
-            <em><p><%= appointment.message %></em></p>
-            <p><%= link_to "Cancel appointment", appointment_path(appointment), method: :delete, data: { confirm: "Are you sure to delete this appointment?" }, class: "btn btn-danger" %></p>
-          </div>
+          <% end %>
         </div>
       </div>
-      <% end %>
 
 
       <div id="appointments-invited" class="tab-pane fade">
         <div class="panel-group">
           <% @dogs.each do |dog| %>
           <% dog.appointments.each do |appointment| %>
-          <div class="panel panel-primary">
-            <div class="panel-heading">Date: <%= appointment.date.strftime("%B %d, %Y")%> | <%= appointment.status.capitalize %></div>
+          <div class="panel panel-primary appointment-item">
+            <div class="panel-heading">
+              <p>Appointment date: <%= appointment.date.strftime("%B %d, %Y")%></p>
+              <p>Status: <%= appointment.status.capitalize %> </p>
+            </div>
             <div class="panel-body">
-              <p>Appointment with <%= appointment.user.first_name %></p>
-              <em><p><%= appointment.message %></em></p>
-              <p><%= link_to "Confirm appointment", appointment_path(appointment, :status => "confirmed"), :method => :put, class: "btn btn-success" %></p>
-              <p><%= link_to "Decline appointment", appointment_path(appointment, :status => "declined"), :method => :put, class: "btn btn-primary" %></p>
+              <p><%= appointment.user.first_name %> wrote you about <%= link_to appointment.dog.name, dog_path(appointment.dog), class: "link-to-dog-show" %> :</p>
+              <em><p class="app-message"><%= appointment.message %></em></p>
+              <p><%= link_to "Confirm appointment", appointment_path(appointment, :status => "confirmed"), :method => :put, class: "btn btn-success app-button" %></p>
+              <p><%= link_to "Decline appointment", appointment_path(appointment, :status => "declined"), :method => :put, class: "btn btn-primary app-button" %></p>
             </div>
           </div>
         </div>
         <% end %>
         <% end %>
       </div>
-
     </div>
   </div>
 </div>
 
+
+<div class="dashboard-dog-container">
+  <h2><%= image_tag 'o.png', height: '44' %> your dogs</h2>
+
+  <div class="container">
+    <div class="row">
+      <% @dogs.each do |dog| %>
+      <div class="col-xs-4">
+        <%= link_to(dog_path(dog)) do %>
+        <% if dog.photo == nil %>
+        <div class="dashboard-dog-item" style="background-image: url(<%= asset_url('doge.jpg') %>)"> <h4><%= dog.name %></h4></div>
+        <% else %>
+        <div class="dashboard-dog-item" style="background-image: url(<%= dog.photo %>)"> <h4><%= dog.name %></h4></div>
+        <% end %>
+        <% end %>
+      </div>
+      <% end %>
+
+      <div class="col-xs-4">
+        <%= link_to(new_dog_path) do %>
+        <div class="dashboard-dog-item add-dog-card" style="background-image: url(<%= asset_url('add-dog.jpg') %>)"> <h5><em>Want to add a new dog?</em></h5></div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 

@@ -1,23 +1,31 @@
 .dashboard-dog-item {
   height: 300px;
-  width: 100%;
+  width: 300px;
   background-size: cover !important;
   background-position: center;
-  border: none;
-  box-shadow: 2px solid red;
+  color: white;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 2px;
   box-shadow: 6px 6px 8px $gray;
-  margin: 0px 50px 80px 50px;
+  margin: 30px;
+  opacity: 0.9;
+  padding: 0px 10px;
 }
 
 .dashboard-dog-item h4 {
   font-size: 45px;
   color: white;
-  text-decoration: none;
+}
 
+.dashboard-dog-item:hover {
+  opacity: 1;
+}
+
+.add-dog-card {
+  align-items: flex-start;
 }
 

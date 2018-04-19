@@ -18,7 +18,7 @@ class AppointmentsController < ApplicationController
     @appointment = current_user.appointments.new(appointment_params)
     @appointment.dog = Dog.find(params[:dog_id])
     authorize @appointment
-    if @appointment.save
+    @appointment.save
       redirect_to dashboard_path, notice: "Appointment created!" # You need to redirect somewhere, probably appointments#show
     else
       render :new

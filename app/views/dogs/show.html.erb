@@ -1,30 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <%= image_tag @dog.photo, class: "dogshow_photo" %>
-      <hr>
+
+<div class="container-full main-page-container">
+
+  <%= image_tag @dog.photo, options = { class: "dogshow_photo" } %>
+
+  <div class="space-container"></div>
+
+  <div class="affix basic-info-show">
+    <div class="calendar_overlay">
       <span><h4>Name: </h4><p><%= @dog.name %></p></span>
-      <h4>Description: </h4><p><%= @dog.description %></p>
       <h4>Age: </h4><p><%= @dog.age %></p>
       <h4>Pedigree: </h4><p><%= @dog.pedigree %></p>
       <h4>Breed: </h4><p><%= @dog.breed.name %></p>
-      <h4>Location: </h4><p><%= @dog.location %></p>
-      <hr>
-      <%= image_tag "map.png", class: "map_show" %>
-    </div>
-    <div class="col-sm-4">
-      <div class="affix calendar_show">
-      <% if current_user != @dog.user %>
-        <h4>Contact <%= @dog.user.first_name %> to request an appointment to see <%= @dog.name %> the dog</h4>
-        <%= simple_form_for([@dog, @appointment]) do |f| %>
-        <%= f.input :date, as: :date, html5: true %>
-        <%= f.input :message %>
-        <%= f.button :submit, :label_html => { class: 'btn-dark' } %>
-      <% end %>
-      <% else %>
-        <%= link_to("This is your dog!! Go to dashboard", dashboard_path, html_options = {class: "btn btn-primary"}) %>
-      <% end %>
-      </div>
+      <h4>Address: </h4><p><%= @dog.address %></p>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Ask <%= @dog.user.first_name %> to meet <%= @dog.name %>
+      </button>
     </div>
   </div>
+
 </div>
+
+<div class="description">
+  <h4>Description: </h4><p><%= @dog.description %></p>
+</div>
+
+<div
+id="map"
+data-markers="<%= @marker.to_json %>"
+></div>
+
+<%= render 'shared/modal' %>
+
+
+
