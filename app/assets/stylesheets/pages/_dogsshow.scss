@@ -1,66 +1,33 @@
+.main-page-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 h4 {
-  color: $black;
+  color: $gray;
 }
 
 p {
-  color: $black;
-}
-
-.left-row {
-  position: relative;
-}
-
-.photo-container {
-  position: absolute;
-  width: 80%;
-  border-radius: 2px;
-  box-shadow: 0px 4px 18px rgba(117,117,117,1);
-}
-
-#appointment_message {
-  color: $black;
-}
-
-#appointment_date {
-  color: $black
-}
-
-.map_show {
-  width: 600px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  border-radius: 4px;
-  box-shadow: 0px 6px 10px #46494c;
+  color: $light-gray;
 }
 
 .dogshow_photo {
-  width: 700px;
-  margin-top: 125px;
-  margin-bottom: 50px;
-  border-radius: 4px;
-  box-shadow: 0px 6px 10px #46494c;
-}
-
-.calendar_show {
-  margin-top: 125px;
-  margin-right: 165px;
+  height: 400px;
 }
 
 .calendar_overlay {
+  z-index: 100000;
   padding: 10px 18px 10px 18px;
-  background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
+  border: 1px solid $gray;
+  background-color: white;
 }
 
-h4 {
-  color: $black;
+.basic-info-show {
+  align-self: flex-end;
 }
 
-p {
-  color: $black;
+body {
+  background-color: white;
 }
 
-hr {
-  border-color: $black;
-}
