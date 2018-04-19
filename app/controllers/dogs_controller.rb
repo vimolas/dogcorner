@@ -13,7 +13,8 @@ class DogsController < ApplicationController
 
   def show
     @appointment = Appointment.new
-    # @lng = @Geocode.location
+    @marker = []
+    @marker = [{lat: @dog.latitude, lng: @dog.longitude }] if @dog.latitude && @dog.longitude
   end
 
   def new
