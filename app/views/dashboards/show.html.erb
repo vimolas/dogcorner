@@ -21,7 +21,7 @@
         <div class="panel-group">
           <% @appointments.each do |appointment| %>
           <div class="panel panel-success appointment-item">
-            <div class="panel-heading">
+            <div class="panel-heading <%= appointment.status %>">
               <p>Appointment date: <%= appointment.date.strftime("%B %d, %Y")%></p>
               <p>Status: <%= appointment.status.capitalize %> </p>
             </div>

@@ -1,6 +1,6 @@
 .dashboard-appointment-container {
   padding: 30px 160px;
-  background-color: $light-gray;
+  background-color: #F0F0F0;
   margin: 0px;
 
   h2 {
@@ -22,7 +22,6 @@
   }
 
   .panel-heading {
-    background-color: $blue;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -33,6 +32,18 @@
     }
   }
 
+  .pending {
+    background-color: $gray;
+  }
+
+  .confirmed {
+    background-color: #34761F;
+  }
+
+  .rejected {
+    background-color: #FFF8AC;
+  }
+
   .app-message {
     color: #8F8D8E;
   }
@@ -40,7 +51,7 @@
   .appointment-item {
     border: none;
     margin: 20px 0px;
-    box-shadow: 6px 6px 8px $gray;
+    box-shadow: 3px 3px 6px $gray;
   }
 
   .app-button {
@@ -82,6 +93,7 @@
 
   .nav-tabs .active a {
     color: $blue;
+    background-color: #F0F0F0;
   }
 
   .nav-tabs .active a:hover {
