@@ -10,11 +10,10 @@
       <h4>Breed: </h4><p><%= @dog.breed.name %></p>
       <h4>Address: </h4><p><%= @dog.address %></p>
       <hr>
-      <div>
-        <p>Banana</p>
-        <%= javascript_include_tag "application" %>
-        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
-      </div>
+      <div
+        id="map"
+        data-markers="<%= @marker.to_json %>"
+      ></div>
     </div>
     <div class="col-sm-4">
       <div class="affix calendar_show">
