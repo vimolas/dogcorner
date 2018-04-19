@@ -1,44 +1,50 @@
-<div class="flex-container">
-<p class="flash-notice"><%= flash[:notice] %></p>
-  <div class="container-index-search-bar">
-    <div>
-      <form action="#" class="form-inline">
-        <input type="text" id="form-input" class="form-control input-lg" placeholder="Where?">
-        <input type="submit" class="btn btn-primary btn-lg" value="Search">
-      </form>
-    </div>
-    <div class="btn-group" id="buttons">
-      <button type="button" class="btn btn-primary">Genra</button>
-      <button type="button" class="btn btn-primary">Breed</button>
-      <button type="button" class="btn btn-primary">Pedigree</button>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p class="flash-notice"><%= flash[:notice] %></p>
+      <div class="container-index-search-bar">
+        <div>
+          <form action="#" class="form-inline">
+            <input type="text" id="form-input" class="form-control input-lg" placeholder="Where?">
+            <input type="submit" class="btn btn-primary btn-lg" value="Search">
+          </form>
+        </div>
+        <div class="btn-group" id="buttons">
+          <button type="button" class="btn btn-primary">Genra</button>
+          <button type="button" class="btn btn-primary">Breed</button>
+          <button type="button" class="btn btn-primary">Pedigree</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<div class="container">
+
   <div class="row">
-    <% @dogs.each do |dog| %>
-    <div class="col-xs-12 col-sm-4">
-
-      <!-- insert <div class="card"> -->
-        <div class="card">
-          <div class="card-description">
-            <h2><%= link_to dog.name, dog_path(dog)%></h2>
-            <% if dog.photo == nil %>
-              <%= image_tag "dog.jpeg" , class: "index_dog_photo" %>
-            <% else %>
-              <%= image_tag(dog.photo, class: "index_dog_photo") %>
-            <% end %>
-            <p><%= "Has pedigree!" if dog.pedigree %></p>
+    <div class="col-lg-9">
+      <div class="row">
+        <% @dogs.each do |dog| %>
+        <div class="col-sm-4">
+          <div class="card card-index">
+              <% if dog.photo == nil %>
+              <%= image_tag "dog.jpeg", style: "height: 250px; width: 275px" %>
+              <% else %>
+              <%= image_tag dog.photo, style: "height: 250px; width: 275px" %>
+              <% end %>
+              <div class="container-paragraph">
+              <p class="paragraph-breed"> Race: <%= dog.breed.name %></p>
+              <p class="paragraph-age"> Months: <%= dog.age %></p>
+              </div>
           </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-
-        </div>
-        <!-- insert <div class="card"> -->
         </div>
         <% end %>
       </div>
     </div>
-
-    <div
-      id="map"
-      data-markers="<%= @markers.to_json %>">
+    <div class="col-lg-3">
+      <div class= "testdiv">
+      </div>
     </div>
+  </div>
+
+</div>
