@@ -27,12 +27,6 @@
   </div>
 </div>
 
-<script>
-  $('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
-</script>
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -44,19 +38,18 @@
       </div>
       <div class="modal-body">
         <% if current_user != @dog.user %>
-        <h4>Contact <%= @dog.user.first_name %> to request an appointment to see <%= @dog.name %> the dog</h4>
-        <%= simple_form_for([@dog, @appointment]) do |f| %>
-        <%= f.input :date, as: :date, html5: true %>
-        <%= f.input :message %>
-        <%= f.button :submit, :label_html => { class: 'btn-dark' } %>
-        <div class="modal-footer">
+          <h4>Contact <%= @dog.user.first_name %> to request an appointment to see <%= @dog.name %> the dog</h4>
+          <%= simple_form_for([@dog, @appointment]) do |f| %>
+          <%= f.input :date, as: :date, html5: true %>
+          <%= f.input :message %>
+          <div class="modal-footer">
+          <%= f.button :submit, :label_html => { class: 'btn-dark' } %>
         </div>
         <% end %>
         <% else %>
         <%= link_to("This is your dog!! Go to dashboard", dashboard_path, html_options = {class: "btn btn-primary"}) %>
         <% end %>
       </div>
-
     </div>
   </div>
 </div>
