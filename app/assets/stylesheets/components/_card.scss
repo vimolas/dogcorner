@@ -1,44 +1,44 @@
-// .container {
+// // .container {
+// //   display: flex;
+// // }
+// // .cards-container {
+// //   display:flex;
+// //   flex-direction: row;
+// // }
+
+// .card-index {
+//   height: 250px;
+//   width: 275px;
+//   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+//   // background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+//   // background-size: cover !important;
+//   // background-position: center;
 //   display: flex;
-// }
-// .cards-container {
-//   display:flex;
-//   flex-direction: row;
+//   position: relative;
+//   margin-bottom: 20px;
+//   float: none;
+//   a {
+//     color: $red;
+//   }
 // }
 
-.card-index {
-  height: 250px;
-  width: 275px;
-  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  // background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-  // background-size: cover !important;
-  // background-position: center;
-  display: flex;
-  position: relative;
-  margin-bottom: 20px;
-  float: none;
-  a {
-    color: $red;
-  }
-}
-
-// .card-description h2 {
-//   font-size: 25px;
-//   text-align: left;
+// // .card-description h2 {
+// //   font-size: 25px;
+// //   text-align: left;
+// //   position: absolute;
+// //   left: 50px;
+// // }
+// .container-paragraph {
+//   background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 100%);
 //   position: absolute;
-//   left: 50px;
+//   font-size: 20px;
+//   font-weight: bold;
+//   bottom: 0px;
+//   right: 82px;
+//   p {
+//     color: $red;
+//   }
 // }
-.container-paragraph {
-  background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 100%);
-  position: absolute;
-  font-size: 20px;
-  font-weight: bold;
-  bottom: 0px;
-  right: 82px;
-  p {
-    color: $red;
-  }
-}
 
 // .paragraph-breed {
 // font-size: 20px;
@@ -73,8 +73,67 @@
   }
 }
 
-.testdiv {
-  background-color: red;
-  height: 600px;
-  width: 600px;
+// .testdiv {
+//   background-color: red;
+//   height: 600px;
+//   width: 600px;
+// }
+
+// .dashboard-dog-container {
+//   padding: 30px 100px;
+//   background-color: white;
+
+//   h2 {
+//     color: $red;
+//     font-size: 40px;
+//     margin-bottom: 20px;
+//     padding-left: 60px;
+//   }
+//   .app-icon {
+//     color: $red;
+//   }
+// }
+
+
+
+.index-dog-item {
+  height: 200px;
+  width: 200px;
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 6px 6px 8px $gray;
+  margin: 30px;
+  opacity: 0.9;
+  padding: 0px 0px;
 }
+
+.index-dog-item h4 {
+  font-size: 25px;
+  color: white;
+}
+
+.index-dog-item:hover {
+  opacity: 1;
+}
+
+.dogcaption {
+  width: 200px;
+  height: 30px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  h5 {
+    margin: 0px;
+    font-size: 16px;
+  }
+}
+

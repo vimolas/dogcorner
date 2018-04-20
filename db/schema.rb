@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20180419094753) do
     t.integer "age"
     t.boolean "pedigree"
     t.text "description"
-    t.string "location"
+    t.string "address"
     t.bigint "user_id"
     t.bigint "breed_id"
     t.datetime "created_at", null: false

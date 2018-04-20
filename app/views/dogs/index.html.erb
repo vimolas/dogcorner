@@ -20,33 +20,44 @@
 </div>
 
 <div class="container">
-
   <div class="row">
-    <div class="col-lg-9">
-      <div class="row">
-        <% @dogs.each do |dog| %>
-        <div class="col-sm-4">
-          <div class="card card-index">
-            <% if dog.photo == nil %>
-            <%= image_tag "dog.jpeg", style: "height: 250px; width: 275px" %>
-            <% else %>
-            <%= image_tag dog.photo, style: "height: 250px; width: 275px" %>
-            <% end %>
-            <div class="container-paragraph">
-              <p class="paragraph-breed"> Race: <%= dog.breed.name %></p>
-              <p class="paragraph-age"> Months: <%= dog.age %></p>
-            </div>
-          </div>
+    <div class="col-xs-9">
+     <% @dogs.each do |dog| %>
+     <div class="col-xs-4">
+      <%= link_to(dog_path(dog)) do %>
+      <% if dog.photo == nil %>
+
+      <div class="index-dog-item" style="background-image: url(<%= asset_url('doge.jpg') %>)">
+        <div class="dogcaption">
+          <h5><%= dog.breed.name %>, <%= dog.age %> </h5>
         </div>
-        <% end %>
       </div>
+
+
+
+      <% else %>
+
+      <div class="index-dog-item" style="background-image: url(<%= dog.photo %>)">
+        <div class="dogcaption">
+          <% if dog.age < 12 %>
+            <h5><%= dog.breed.name.capitalize %>, <%= dog.age %> months </h5>
+          <% else %>
+            <h5><%= dog.breed.name.capitalize %>, <%= (dog.age)/12.round %> years </h5>
+          <% end %>
+        </div>
+      </div>
+
+
+      <% end %>
+      <% end %>
     </div>
-    <div class="col-lg-3">
-      <div
-      id="map"
-      data-markers="<%= @markers.to_json %>">
-    </div>
+    <% end %>
+  </div>
+  <div class="col-xs-3">
+    <div
+    id="map"
+    data-markers="<%= @markers.to_json %>">
   </div>
 </div>
-
+</div>
 </div>
