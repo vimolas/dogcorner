@@ -1,7 +1,4 @@
-.main-page-container {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 h4 {
   color: $gray;
@@ -12,20 +9,21 @@ p {
 }
 
 .dogshow_photo {
-  height: 400px;
+  height: 600px;
 }
 
-.calendar_overlay {
+.description {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.basic-info-show {
   z-index: 100000;
-  padding: 10px 18px 10px 18px;
   border-radius: 4px;
   border: 1px solid $gray;
   background-color: white;
 }
 
-.basic-info-show {
-  align-self: flex-end;
-}
 
 body {
   background-color: white;

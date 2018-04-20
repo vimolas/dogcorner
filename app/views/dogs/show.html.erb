@@ -1,27 +1,22 @@
-
-<div class="container-full main-page-container">
-
-  <%= image_tag @dog.photo, options = { class: "dogshow_photo" } %>
-
-  <div class="space-container"></div>
-
-  <div class="affix basic-info-show">
-    <div class="calendar_overlay">
-      <span><h4>Name: </h4><p><%= @dog.name %></p></span>
-      <h4>Age: </h4><p><%= @dog.age %></p>
-      <h4>Pedigree: </h4><p><%= @dog.pedigree %></p>
-      <h4>Breed: </h4><p><%= @dog.breed.name %></p>
-      <h4>Address: </h4><p><%= @dog.address %></p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Ask <%= @dog.user.first_name %> to meet <%= @dog.name %>
-      </button>
-    </div>
+<div class="affix basic-info-show col-sm-2 col-sm-offset-8">
+  <div class="calendar_overlay">
+    <span><h4>Name: </h4><p><%= @dog.name %></p></span>
+    <h4>Age: </h4><p><%= @dog.age %></p>
+    <h4>Pedigree: </h4><p><%= @dog.pedigree %></p>
+    <h4>Breed: </h4><p><%= @dog.breed.name %></p>
+    <h4>Address: </h4><p><%= @dog.address %></p>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Ask <%= @dog.user.first_name %> to meet <%= @dog.name %>
+    </button>
   </div>
-
 </div>
 
-<div class="description">
-  <h4>Description: </h4><p><%= @dog.description %></p>
+<%= image_tag @dog.photo, options = { class: "dogshow_photo" } %>
+
+<div class="row">
+  <div class="description col-sm-6 col-sm-offset-1">
+    <h4>Description: </h4><p><%= @dog.description %></p>
+  </div>
 </div>
 
 <div
