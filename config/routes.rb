@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'homes/show'
+
   get "dashboard", to: "dashboards#show"
 
   devise_for :users
