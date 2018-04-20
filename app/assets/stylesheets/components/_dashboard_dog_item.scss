@@ -13,8 +13,17 @@
   box-shadow: 6px 6px 8px $gray;
   margin: 30px;
   opacity: 0.9;
-  padding: 0px 10px;
+  padding: 0px;
 }
+
+.caption {
+  width: 300px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  align-items: center;
+}
+
 
 .dashboard-dog-item h4 {
   font-size: 45px;
@@ -26,6 +35,6 @@
 }
 
 .add-dog-card {
-  align-items: flex-start;
+  align-items: flex-end;
 }
 

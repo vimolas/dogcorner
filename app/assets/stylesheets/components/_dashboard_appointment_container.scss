@@ -45,8 +45,8 @@
     background-color: #34761F;
   }
 
-  .rejected {
-    background-color: #FFF8AC;
+  .declined {
+    background-color: $blue;
   }
 
   .app-message {
@@ -60,7 +60,7 @@
   }
 
   .app-button {
-    opacity: 0.8;
+    opacity: 0.9;
     margin-right: 10px;
   }
 
@@ -73,11 +73,11 @@
   }
 
   .btn-success {
-    background-color: #74B566;
+    background-color: #34761F;
   }
 
   .btn-primary {
-    background-color: red;
+    background-color: $blue;
   }
 
   .btn {
@@ -99,11 +99,16 @@
 
   .nav-tabs .active a {
     color: $blue;
-    background-color: #F0F0F0;
+    background-color: white;
+  }
+
+  .nav-tabs .active a:link {
+    background-color: white ;
   }
 
   .nav-tabs .active a:hover {
     color: $blue;
+    background-color: white;
   }
 
 }
