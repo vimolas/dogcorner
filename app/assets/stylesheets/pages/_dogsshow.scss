@@ -30,7 +30,7 @@ p {
 }
 
 .photo-container {
-  width: 600px;
+  width: 800px;
   height: 400px;
   background-position: center;
   margin-top: 65px;
@@ -40,6 +40,10 @@ p {
 .request-appt {
   background-color: $red;
   color: white;
+}
+
+#map {
+  width: 800px;
 }
 
 
