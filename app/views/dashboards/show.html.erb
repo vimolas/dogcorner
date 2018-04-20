@@ -21,9 +21,9 @@
         <div class="panel-group">
           <% @appointments.each do |appointment| %>
           <div class="panel panel-success appointment-item">
-            <div class="panel-heading">
+            <div class="panel-heading <%= appointment.status %>">
               <p>Appointment date: <%= appointment.date.strftime("%B %d, %Y")%></p>
-              <p>Status: <%= appointment.status.capitalize %> </p>
+              <p><em><%= appointment.status.capitalize %></em></p>
             </div>
             <div class="panel-body">
               <p>You requested to check out <%= link_to appointment.dog.name, dog_path(appointment.dog), class: "link-to-dog-show" %></p>
@@ -41,15 +41,17 @@
           <% @dogs.each do |dog| %>
           <% dog.appointments.each do |appointment| %>
           <div class="panel panel-primary appointment-item">
-            <div class="panel-heading">
+            <div class="panel-heading <%= appointment.status %>">
               <p>Appointment date: <%= appointment.date.strftime("%B %d, %Y")%></p>
-              <p>Status: <%= appointment.status.capitalize %> </p>
+              <p><em><%= appointment.status.capitalize %></em></p>
             </div>
             <div class="panel-body">
               <p><%= appointment.user.first_name %> wrote you about <%= link_to appointment.dog.name, dog_path(appointment.dog), class: "link-to-dog-show" %> :</p>
               <em><p class="app-message"><%= appointment.message %></em></p>
-              <p><%= link_to "Confirm appointment", appointment_path(appointment, :status => "confirmed"), :method => :put, class: "btn btn-success app-button" %></p>
-              <p><%= link_to "Decline appointment", appointment_path(appointment, :status => "declined"), :method => :put, class: "btn btn-primary app-button" %></p>
+              <div class="inline-buttons">
+                <p><%= link_to "Confirm appointment", appointment_path(appointment, :status => "confirmed"), :method => :put, class: "btn btn-success app-button" %></p>
+                <p><%= link_to "Decline appointment", appointment_path(appointment, :status => "declined"), :method => :put, class: "btn btn-primary app-button" %></p>
+              </div>
             </div>
           </div>
         </div>
