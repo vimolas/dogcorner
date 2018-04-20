@@ -9,11 +9,6 @@
             <input type="submit" class="btn btn-primary btn-lg" value="Search">
           </form>
         </div>
-        <div class="btn-group" id="buttons">
-          <button type="button" class="btn btn-primary">Genra</button>
-          <button type="button" class="btn btn-primary">Breed</button>
-          <button type="button" class="btn btn-primary">Pedigree</button>
-        </div>
       </div>
     </div>
   </div>
@@ -40,9 +35,9 @@
       <div class="index-dog-item" style="background-image: url(<%= dog.photo %>)">
         <div class="dogcaption">
           <% if dog.age < 12 %>
-            <h5><%= dog.breed.name.capitalize %>, <%= dog.age %> months </h5>
+          <h5><%= dog.breed.name.capitalize %>, <%= dog.age %> months </h5>
           <% else %>
-            <h5><%= dog.breed.name.capitalize %>, <%= (dog.age)/12.round %> years </h5>
+          <h5><%= dog.breed.name.capitalize %>, <%= (dog.age)/12.round %> years </h5>
           <% end %>
         </div>
       </div>
@@ -54,10 +49,7 @@
     <% end %>
   </div>
   <div class="col-xs-3">
-    <div
-    id="map"
-    data-markers="<%= @markers.to_json %>">
+    <div id="map" class="map-index" data-spy="affix" data-markers="<%= @markers.to_json %>"></div>
   </div>
-</div>
 </div>
 </div>
