@@ -30,7 +30,7 @@ Dog.create(
   name: "Tammy",
   breed_id: 2,
   user_id: 3,
-  photo: "https://i.ytimg.com/vi/CAdIskrpq5o/maxresdefault.jpg",
+  photo: "https://cdn.pixabay.com/photo/2016/09/07/16/25/husky-1651984_960_720.jpg",
   description: "now is the second of two dogs rescued from Korea by Mr. Muggles several weeks ago. This beautiful dog with her sparkling white teeth is probably just a year of age and she’s friendly, sweet and playful. We have not tested her around cats at this point. Here with her San Francisco foster parent, Snow has been learning about potty training and how to walk on a leash and she is making good progress. Snow will make a wonderful companion for some lucky family ",
   age: 3,
   pedigree: true,
