@@ -19,12 +19,13 @@
   <div class="photo-container" style="background-image: url(<%= @dog.photo %>);">
   </div>
 
-  <div class="description col-sm-8">
+  <div class="description col-sm-6 col-offset-sm-6">
     <h4>Description: </h4><p><%= @dog.description %></p>
   </div>
 
   <div
   id="map"
+  class="show-map"
   data-markers="<%= @marker.to_json %>"
   ></div>
 
