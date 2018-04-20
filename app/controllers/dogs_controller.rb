@@ -5,13 +5,13 @@ class DogsController < ApplicationController
     @text_input_from_user = params["search-word"]
     @dogs = policy_scope(Dog)
     if params.has_key?("search-word")
-      @dogs = Dog.where('location LIKE ?', "%#{@text_input_from_user.capitalize}%")
+      @dogs = Dog.where('address LIKE ?', "%#{@text_input_from_user.capitalize}%")
     else
       @dogs = Dog.all
     end
 
-    @dogs = Dog.where.not(latitude: nil, longitude: nil)
-    @markers = @dogs.map do |dog|
+    @dogsT = @dogs.where.not(latitude: nil, longitude: nil)
+    @markers = @dogsT.map do |dog|
       {
         lat: dog.latitude,
         lng: dog.longitude,
@@ -62,6 +62,6 @@ class DogsController < ApplicationController
   end
 
   def dogs_params
-    params.require(:dog).permit(:name, :photo, :age, :pedigree, :description, :location, :user_id, :breed_id)
+    params.require(:dog).permit(:name, :photo, :age, :pedigree, :description, :address, :user_id, :breed_id)
   end
 end
