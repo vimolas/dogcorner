@@ -3,13 +3,49 @@
 
     <div class="text">
      <%= image_tag "wlogo.png" %>
-      <p class="text-description">Adopt your dog in a few clicks</p>
-    </div>
+     <p class="text-description">Adopt your dog in a few clicks</p>
+   </div>
 
-     <form action="dogs" class="form-inline">
-       <input  name="search-word" type="text" class="form-control input-lg form-input" placeholder="Where?">
-       <input type="submit" class="btn btn-primary btn-lg" value="Search">
-     </form>
-  </div>
+   <form action="dogs" class="form-inline">
+     <input  name="search-word" type="text" class="form-control input-lg form-input" placeholder="Where?">
+     <input type="submit" class="btn btn-primary btn-lg" value="Search">
+   </form>
+ </div>
 </div>
 
+
+<h3 class="home-subtitle">Last dogs added to Dog Corner</h3>
+<div class="home-wrapper">
+<div class="row">
+ <% @dogs.first(3).each do |dog| %>
+ <div class="col-xs-4">
+  <%= link_to(dog_path(dog)) do %>
+  <% if dog.photo == nil %>
+
+  <div class="index-dog-item home-card" style="background-image: url(<%= asset_url('doge.jpg') %>)">
+    <div class="dogcaption home-caption">
+      <h5><%= dog.breed.name %>, <%= dog.age %> </h5>
+    </div>
+  </div>
+
+
+
+  <% else %>
+
+  <div class="index-dog-item home-card" style="background-image: url(<%= dog.photo %>)">
+    <div class="dogcaption home-caption">
+      <% if dog.age < 12 %>
+      <h5><%= dog.breed.name.capitalize %>, <%= dog.age %> months </h5>
+      <% else %>
+      <h5><%= dog.breed.name.capitalize %>, <%= (dog.age)/12.round %> years </h5>
+      <% end %>
+    </div>
+  </div>
+
+
+  <% end %>
+  <% end %>
+</div>
+<% end %>
+</div>
+</div>

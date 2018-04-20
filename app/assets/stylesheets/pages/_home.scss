@@ -12,6 +12,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .btn {
@@ -28,4 +29,24 @@ h1 {
 
 .text-description {
   color: white;
+}
+
+.home-card {
+  height: 300px;
+  width: 300px;
+
+}
+
+.home-caption {
+  width: 300px;
+}
+
+.home-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 70px;
+}
+.home-subtitle {
+  text-align: center;
+
 }
