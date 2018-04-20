@@ -6,22 +6,40 @@ h4 {
 
 p {
   color: $light-gray;
+  font-weight: lighter;
 }
 
-.dogshow_photo {
-  height: 600px;
+.container-main {
+  position: relative;
+  width: 1440vw;
 }
 
 .description {
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .basic-info-show {
-  z-index: 100000;
+  z-index: 1;
   border-radius: 4px;
-  border: 1px solid $gray;
+  border: 1px solid $light-gray;
   background-color: white;
+  padding: 20px 20px 20px 20px;
+  margin-top: 65px;
+  right: 9%;
+}
+
+.photo-container {
+  width: 600px;
+  height: 400px;
+  background-position: center;
+  margin-top: 65px;
+  border-radius: 4px;
+}
+
+.request-appt {
+  background-color: $red;
+  color: white;
 }
 
 
