@@ -3,7 +3,15 @@
     <div class="basic-info-show" data-spy="affix">
       <% if current_user != @dog.user %>
         <div class="inline-container"><h4>Name: </h4><p><%= @dog.name %></p class="inline-container"></div>
-        <div class="inline-container"><h4>Age: </h4><p><%= @dog.age %></p></div>
+
+        <div class="inline-container"><h4>Age: </h4><p>
+          <% if @dog.age < 12 %>
+            <%= @dog.age %> months
+          <% else %>
+            <%= (@dog.age)/12.round %> years
+          <% end %>
+        </p></div>
+
         <div class="inline-container"><h4>Pedigree: </h4><p><%= @dog.pedigree %></p></div>
         <div class="inline-container"><h4>Breed: </h4><p><%= @dog.breed.name %></p></div>
         <div class="inline-container"><h4>Address: </h4><p><%= @dog.address %></p></div>
