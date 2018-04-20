@@ -6,7 +6,7 @@ class DogPolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    false
   end
 
   def show?
