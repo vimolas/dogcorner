@@ -21,6 +21,11 @@
     font-size: 18px;
   }
 
+  .inline-buttons {
+    display: flex;
+    justify-content: flex-start;
+  }
+
   .panel-heading {
     color: white;
     display: flex;
@@ -56,6 +61,7 @@
 
   .app-button {
     opacity: 0.8;
+    margin-right: 10px;
   }
 
   .app-button:hover {
