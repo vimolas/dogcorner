@@ -47,3 +47,9 @@ body {
   background-color: white;
 }
 
+.inline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
