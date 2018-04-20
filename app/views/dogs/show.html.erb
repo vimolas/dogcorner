@@ -1,12 +1,12 @@
 <div class="container">
   <div class="container-main">
-    <div class="basic-info-show" data-spy="affix" bottom-offset="1000">
+    <div class="basic-info-show" data-spy="affix">
       <% if current_user != @dog.user %>
-      <span><h4>Name: </h4><p><%= @dog.name %></p></span>
-      <h4>Age: </h4><p><%= @dog.age %></p>
-      <h4>Pedigree: </h4><p><%= @dog.pedigree %></p>
-      <h4>Breed: </h4><p><%= @dog.breed.name %></p>
-      <h4>Address: </h4><p><%= @dog.address %></p>
+        <div class="inline-container"><h4>Name: </h4><p><%= @dog.name %></p class="inline-container"></div>
+        <div class="inline-container"><h4>Age: </h4><p><%= @dog.age %></p></div>
+        <div class="inline-container"><h4>Pedigree: </h4><p><%= @dog.pedigree %></p></div>
+        <div class="inline-container"><h4>Breed: </h4><p><%= @dog.breed.name %></p></div>
+        <div class="inline-container"><h4>Address: </h4><p><%= @dog.address %></p></div>
       <button type="button" class="btn request-appt" data-toggle="modal" data-target="#exampleModal">
         Ask <%= @dog.user.first_name %> to meet <%= @dog.name %>
       </button>
