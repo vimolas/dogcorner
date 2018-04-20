@@ -27,24 +27,26 @@
         <% @dogs.each do |dog| %>
         <div class="col-sm-4">
           <div class="card card-index">
-              <% if dog.photo == nil %>
-              <%= image_tag "dog.jpeg", style: "height: 250px; width: 275px" %>
-              <% else %>
-              <%= image_tag dog.photo, style: "height: 250px; width: 275px" %>
-              <% end %>
-              <div class="container-paragraph">
+            <% if dog.photo == nil %>
+            <%= image_tag "dog.jpeg", style: "height: 250px; width: 275px" %>
+            <% else %>
+            <%= image_tag dog.photo, style: "height: 250px; width: 275px" %>
+            <% end %>
+            <div class="container-paragraph">
               <p class="paragraph-breed"> Race: <%= dog.breed.name %></p>
               <p class="paragraph-age"> Months: <%= dog.age %></p>
-              </div>
+            </div>
           </div>
         </div>
         <% end %>
       </div>
     </div>
     <div class="col-lg-3">
-      <div class= "testdiv">
-      </div>
+      <div
+      id="map"
+      data-markers="<%= @markers.to_json %>">
     </div>
   </div>
+</div>
 
 </div>
